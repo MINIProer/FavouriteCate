@@ -19,7 +19,7 @@ class _JRMainScreenState extends State<JRMainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         items: items,
-        selectedFontSize: JRAppTheme.bodyFontSize, // 点击切换保持文案字体一致
+        selectedFontSize: JRAppTheme.bodyFontSize, // 点击切换保持文案字体一致k
         unselectedFontSize: JRAppTheme.bodyFontSize,
         onTap: (index) {
           setState(() {

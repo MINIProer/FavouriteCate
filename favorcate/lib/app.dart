@@ -1,3 +1,4 @@
+import 'package:favorcate/ui/shared/screen_fit_tool.dart';
 import 'package:flutter/material.dart';
 
 import 'core/router/router.dart';
@@ -6,6 +7,10 @@ import 'ui/shared/app_theme.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    
+    // 初始化屏幕参数工具类
+    JRScreenFitTool.initialize();
+
     return MaterialApp(
       title: '美食广场 ',
       theme: JRAppTheme.normalThemeData, // 主题
