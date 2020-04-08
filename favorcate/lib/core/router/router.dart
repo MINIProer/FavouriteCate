@@ -1,4 +1,5 @@
 import 'package:favorcate/ui/pages/main/main.dart';
+import 'package:favorcate/ui/pages/meal/meal.dart';
 import 'package:flutter/material.dart';
 
 class JRRouter {
@@ -6,7 +7,8 @@ class JRRouter {
 
   // 路由映射关系
   static final Map<String, WidgetBuilder> routers = {
-    JRMainScreen.routeName: (ctx) => JRMainScreen()
+    JRMainScreen.routeName: (ctx) => JRMainScreen(),
+    JRMealScreen.routeName: (ctx) => JRMealScreen()
   };
 
   // 后期扩展

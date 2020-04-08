@@ -15,6 +15,7 @@ import 'home_category_item.dart';
 class JRHomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return FutureBuilder<List<JRCategoryModel>>(
         future: JRJsonParse.getCategoryData(),
         builder: (ctx, snapShot) {
