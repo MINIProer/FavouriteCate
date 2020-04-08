@@ -1,4 +1,5 @@
 import 'package:favorcate/core/model/category_model.dart';
+import 'package:favorcate/ui/pages/meal/meal_content.dart';
 import 'package:flutter/material.dart';
 
 class JRMealScreen extends StatelessWidget {
@@ -13,9 +14,7 @@ class JRMealScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(category.title),
       ),
-      body: Center(
-        child: Text('meal list'),
-      ),
+      body: JRMealContent(),
     );
   }
 }
