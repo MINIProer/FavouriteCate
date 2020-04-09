@@ -13,21 +13,23 @@ class JRMealModel {
   bool isVegetarian;
   bool isLactoseFree;
 
+  String complexityString; // 自定义属性-复杂度文本
+
   JRMealModel({
-        this.id,
-        this.categories,
-        this.title,
-        this.affordability,
-        this.complexity,
-        this.imageUrl,
-        this.duration,
-        this.ingredients,
-        this.steps,
-        this.isGlutenFree,
-        this.isVegan,
-        this.isVegetarian,
-        this.isLactoseFree,
-    });
+    this.id,
+    this.categories,
+    this.title,
+    this.affordability,
+    this.complexity,
+    this.imageUrl,
+    this.duration,
+    this.ingredients,
+    this.steps,
+    this.isGlutenFree,
+    this.isVegan,
+    this.isVegetarian,
+    this.isLactoseFree,
+  });
 
   JRMealModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -59,5 +61,26 @@ class JRMealModel {
         "isVegan": isVegan,
         "isVegetarian": isVegetarian,
         "isLactoseFree": isLactoseFree,
-    };
+      };
+
+  String get getComplexityString {
+    switch (complexity) {
+      case 0:
+        {
+          return '简单';
+        }
+        break;
+      case 1:
+        {
+          return '中等';
+        }
+        break;
+      case 2:
+        {
+          return '复杂';
+        }
+        break;
+      default:
+    }
+  }
 }

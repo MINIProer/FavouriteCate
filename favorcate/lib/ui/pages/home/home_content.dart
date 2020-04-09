@@ -1,10 +1,10 @@
+import 'package:favorcate/ui/widgets/home_category_item.dart';
 import 'package:flutter/material.dart';
 
 import 'package:favorcate/core/model/category_model.dart';
 import 'package:favorcate/core/services/json_parse.dart';
 import 'package:favorcate/core/extensions/int_extension.dart';
 
-import 'home_category_item.dart';
 
 /**
  * FutureBuilder

@@ -1,6 +1,7 @@
 import 'package:favorcate/core/model/category_model.dart';
 import 'package:favorcate/core/model/meal_model.dart';
 import 'package:favorcate/core/viewmodel/meal_view_model.dart';
+import 'package:favorcate/ui/widgets/meal_item.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +21,7 @@ class JRMealContent extends StatelessWidget {
           itemCount: meals.length,
           itemBuilder: (ctx, index) {
             JRMealModel mealModel = meals[index];
-            return Text('${mealModel.categories} --- ${mealModel.title}');
+            return JRMealItem(mealModel);
         });
       }, 
     );
