@@ -1,9 +1,11 @@
 import 'package:favorcate/core/model/meal_model.dart';
+import 'package:favorcate/core/viewmodel/favor_view_model.dart';
 import 'package:favorcate/ui/pages/detail/detail.dart';
 import 'package:flutter/material.dart';
 
 import 'package:favorcate/core/extensions/int_extension.dart';
 import 'package:favorcate/core/extensions/double_extension.dart';
+import 'package:provider/provider.dart';
 
 import 'operation_item.dart';
 
@@ -29,7 +31,8 @@ class JRMealItem extends StatelessWidget {
         ),
       ),
       onTap: () {
-        Navigator.of(context).pushNamed(JRDetailScreen.routeName, arguments: _meal);
+        Navigator.of(context)
+            .pushNamed(JRDetailScreen.routeName, arguments: _meal);
       },
     );
   }
@@ -77,9 +80,25 @@ class JRMealItem extends StatelessWidget {
           JROperationItem(Icon(Icons.schedule), '${_meal.duration}分钟'),
           JROperationItem(
               Icon(Icons.restaurant), '${_meal.getComplexityString}'),
-          JROperationItem(Icon(Icons.favorite), '未收藏'),
+          buildFavorOperationItem()
         ],
       ),
     );
+  }
+
+  Widget buildFavorOperationItem() {
+    return Consumer<JRFavorViewModel>(builder: (context, favorVM, child) {
+      final iconData = favorVM.isFavor(_meal)
+          ? Icon(Icons.favorite, color: Colors.red)
+          : Icon(Icons.favorite);
+      final favorString = favorVM.isFavor(_meal) ? '已收藏' : '未收藏';
+
+      return GestureDetector(
+        child: JROperationItem(iconData, favorString),
+        onTap: () {
+          favorVM.handleMeal(_meal);
+        },
+      );
+    });
   }
 }

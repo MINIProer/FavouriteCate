@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class JRFavorViewModel extends ChangeNotifier {
   List<JRMealModel> _favorMeals = [];
 
-  List<JRMealModel> get favorMeals {
+  List<JRMealModel> get getFavorMeals {
     return _favorMeals;
   }
 

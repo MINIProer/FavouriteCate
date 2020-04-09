@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'favor_content.dart';
+
 class JRFavorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -7,9 +9,7 @@ class JRFavorScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('我的收藏'),
       ),
-      body: Center(
-        child: Text('我的收藏'),
-      ),
+      body: JRFavorContent(),
     );
   }
 }
