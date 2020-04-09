@@ -1,3 +1,4 @@
+
 import 'package:favorcate/ui/widgets/drawer_menu_item.dart';
 import 'package:flutter/material.dart';
 
@@ -11,10 +12,7 @@ class JRHomeDrawer extends StatelessWidget {
       color: Theme.of(context).canvasColor,
       child: Drawer(
         child: Column(
-          children: <Widget>[
-            setupTopTitleArea(),
-            setupMenuArea()
-          ],
+          children: <Widget>[setupTopTitleArea(), setupMenuArea(context)],
         ),
       ),
     );
@@ -34,19 +32,27 @@ class JRHomeDrawer extends StatelessWidget {
         ));
   }
 
-  Widget setupMenuArea() {
+  Widget setupMenuArea(BuildContext context) {
     return Padding(
       padding: EdgeInsets.fromLTRB(15.px, 20.px, 15.px, 20.px),
       child: Column(
         children: <Widget>[
           JRDrawerMenuItem(
             Icons.restaurant,
-            '进餐'
+            '进餐',
+            handler: () {
+              print('进餐');
+              Navigator.of(context).pop();
+            },
           ),
           SizedBox(height: 20.px),
           JRDrawerMenuItem(
             Icons.settings,
-            '设置'
+            '设置',
+            handler: () {
+              print('设置');
+              Navigator.of(context).pop();
+            },
           )
         ],
       ),
