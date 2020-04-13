@@ -1,3 +1,4 @@
+import 'package:favorcate/ui/pages/home/home_drawer.dart';
 import 'package:favorcate/ui/pages/main/initialize_items.dart';
 import 'package:favorcate/ui/shared/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,7 @@ class _JRMainScreenState extends State<JRMainScreen> {
           });
         },
       ),
+      drawer: JRHomeDrawer()
     );
   }
 }

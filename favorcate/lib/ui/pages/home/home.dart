@@ -8,9 +8,8 @@ class JRHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: JRHomeAppBar(),
+      appBar: JRHomeAppBar(context),
       body: JRHomeContent(),
-      drawer: JRHomeDrawer()
     );
   }
 }

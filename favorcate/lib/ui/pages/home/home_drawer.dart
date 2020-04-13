@@ -1,4 +1,4 @@
-
+import 'package:favorcate/ui/pages/filter/filter.dart';
 import 'package:favorcate/ui/widgets/drawer_menu_item.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +51,7 @@ class JRHomeDrawer extends StatelessWidget {
             '设置',
             handler: () {
               print('设置');
-              Navigator.of(context).pop();
+              Navigator.of(context).pushNamed(JRFilterScreen.routeName);
             },
           )
         ],
